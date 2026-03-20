@@ -1,4 +1,4 @@
-public class quadratic_equation{
+public class QuadraticEquation{
 	public static void main(String[] args){
 		if (args.length != 3) {
 			System.out.println("Podales niepoprwana ilosc argumentow");
@@ -8,7 +8,13 @@ public class quadratic_equation{
 		a = Double.parseDouble(args[0]);
 		b = Double.parseDouble(args[1]);
 		c = Double.parseDouble(args[2]);
-		double delta = b*b - 4*a*c;
+		double delta = getDelta(a,b,c);
+		computeAndPrintResult(delta,a,b);
+	}
+	public static double getDelta (double a, double b, double c){
+		return b*b - 4*a*c;
+	}
+	public static void computeAndPrintResult (double delta, double a, double b) {
 		if (delta < 0) {
 			System.out.println("Delta mniejsza niz 0");
 			return;
